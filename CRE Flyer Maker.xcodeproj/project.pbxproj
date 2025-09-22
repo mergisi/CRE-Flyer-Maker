@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		1DEA1FF22E818C2C00E4E2AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1DEA1FD72E818C2B00E4E2AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DEA1FDE2E818C2B00E4E2AA;
+			remoteInfo = "CRE Flyer Maker";
+		};
+		1DEA1FFC2E818C2C00E4E2AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1DEA1FD72E818C2B00E4E2AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DEA1FDE2E818C2B00E4E2AA;
+			remoteInfo = "CRE Flyer Maker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1DEA1FDF2E818C2B00E4E2AA /* CRE Flyer Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CRE Flyer Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DEA1FF12E818C2C00E4E2AA /* CRE Flyer MakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CRE Flyer MakerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DEA1FFB2E818C2C00E4E2AA /* CRE Flyer MakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CRE Flyer MakerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1DEA1FE12E818C2B00E4E2AA /* CRE Flyer Maker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "CRE Flyer Maker";
+			sourceTree = "<group>";
+		};
+		1DEA1FF42E818C2C00E4E2AA /* CRE Flyer MakerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "CRE Flyer MakerTests";
+			sourceTree = "<group>";
+		};
+		1DEA1FFE2E818C2C00E4E2AA /* CRE Flyer MakerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "CRE Flyer MakerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1DEA1FDC2E818C2B00E4E2AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DEA1FEE2E818C2C00E4E2AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DEA1FF82E818C2C00E4E2AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1DEA1FD62E818C2B00E4E2AA = {
+			isa = PBXGroup;
+			children = (
+				1DEA1FE12E818C2B00E4E2AA /* CRE Flyer Maker */,
+				1DEA1FF42E818C2C00E4E2AA /* CRE Flyer MakerTests */,
+				1DEA1FFE2E818C2C00E4E2AA /* CRE Flyer MakerUITests */,
+				1DEA1FE02E818C2B00E4E2AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1DEA1FE02E818C2B00E4E2AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1DEA1FDF2E818C2B00E4E2AA /* CRE Flyer Maker.app */,
+				1DEA1FF12E818C2C00E4E2AA /* CRE Flyer MakerTests.xctest */,
+				1DEA1FFB2E818C2C00E4E2AA /* CRE Flyer MakerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1DEA1FDE2E818C2B00E4E2AA /* CRE Flyer Maker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEA20052E818C2C00E4E2AA /* Build configuration list for PBXNativeTarget "CRE Flyer Maker" */;
+			buildPhases = (
+				1DEA1FDB2E818C2B00E4E2AA /* Sources */,
+				1DEA1FDC2E818C2B00E4E2AA /* Frameworks */,
+				1DEA1FDD2E818C2B00E4E2AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1DEA1FE12E818C2B00E4E2AA /* CRE Flyer Maker */,
+			);
+			name = "CRE Flyer Maker";
+			packageProductDependencies = (
+			);
+			productName = "CRE Flyer Maker";
+			productReference = 1DEA1FDF2E818C2B00E4E2AA /* CRE Flyer Maker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1DEA1FF02E818C2C00E4E2AA /* CRE Flyer MakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEA20082E818C2C00E4E2AA /* Build configuration list for PBXNativeTarget "CRE Flyer MakerTests" */;
+			buildPhases = (
+				1DEA1FED2E818C2C00E4E2AA /* Sources */,
+				1DEA1FEE2E818C2C00E4E2AA /* Frameworks */,
+				1DEA1FEF2E818C2C00E4E2AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1DEA1FF32E818C2C00E4E2AA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1DEA1FF42E818C2C00E4E2AA /* CRE Flyer MakerTests */,
+			);
+			name = "CRE Flyer MakerTests";
+			packageProductDependencies = (
+			);
+			productName = "CRE Flyer MakerTests";
+			productReference = 1DEA1FF12E818C2C00E4E2AA /* CRE Flyer MakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1DEA1FFA2E818C2C00E4E2AA /* CRE Flyer MakerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEA200B2E818C2C00E4E2AA /* Build configuration list for PBXNativeTarget "CRE Flyer MakerUITests" */;
+			buildPhases = (
+				1DEA1FF72E818C2C00E4E2AA /* Sources */,
+				1DEA1FF82E818C2C00E4E2AA /* Frameworks */,
+				1DEA1FF92E818C2C00E4E2AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1DEA1FFD2E818C2C00E4E2AA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1DEA1FFE2E818C2C00E4E2AA /* CRE Flyer MakerUITests */,
+			);
+			name = "CRE Flyer MakerUITests";
+			packageProductDependencies = (
+			);
+			productName = "CRE Flyer MakerUITests";
+			productReference = 1DEA1FFB2E818C2C00E4E2AA /* CRE Flyer MakerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1DEA1FD72E818C2B00E4E2AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					1DEA1FDE2E818C2B00E4E2AA = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					1DEA1FF02E818C2C00E4E2AA = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 1DEA1FDE2E818C2B00E4E2AA;
+					};
+					1DEA1FFA2E818C2C00E4E2AA = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 1DEA1FDE2E818C2B00E4E2AA;
+					};
+				};
+			};
+			buildConfigurationList = 1DEA1FDA2E818C2B00E4E2AA /* Build configuration list for PBXProject "CRE Flyer Maker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1DEA1FD62E818C2B00E4E2AA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1DEA1FE02E818C2B00E4E2AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1DEA1FDE2E818C2B00E4E2AA /* CRE Flyer Maker */,
+				1DEA1FF02E818C2C00E4E2AA /* CRE Flyer MakerTests */,
+				1DEA1FFA2E818C2C00E4E2AA /* CRE Flyer MakerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1DEA1FDD2E818C2B00E4E2AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DEA1FEF2E818C2C00E4E2AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DEA1FF92E818C2C00E4E2AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1DEA1FDB2E818C2B00E4E2AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DEA1FED2E818C2C00E4E2AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DEA1FF72E818C2C00E4E2AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1DEA1FF32E818C2C00E4E2AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1DEA1FDE2E818C2B00E4E2AA /* CRE Flyer Maker */;
+			targetProxy = 1DEA1FF22E818C2C00E4E2AA /* PBXContainerItemProxy */;
+		};
+		1DEA1FFD2E818C2C00E4E2AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1DEA1FDE2E818C2B00E4E2AA /* CRE Flyer Maker */;
+			targetProxy = 1DEA1FFC2E818C2C00E4E2AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEA20032E818C2C00E4E2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = A34739LVZN;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1DEA20042E818C2C00E4E2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = A34739LVZN;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1DEA20062E818C2C00E4E2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A34739LVZN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mergisi.CRE-Flyer-Maker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1DEA20072E818C2C00E4E2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A34739LVZN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mergisi.CRE-Flyer-Maker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1DEA20092E818C2C00E4E2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A34739LVZN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mergisi.CRE-Flyer-MakerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CRE Flyer Maker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CRE Flyer Maker";
+			};
+			name = Debug;
+		};
+		1DEA200A2E818C2C00E4E2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A34739LVZN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mergisi.CRE-Flyer-MakerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CRE Flyer Maker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CRE Flyer Maker";
+			};
+			name = Release;
+		};
+		1DEA200C2E818C2C00E4E2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A34739LVZN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mergisi.CRE-Flyer-MakerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CRE Flyer Maker";
+			};
+			name = Debug;
+		};
+		1DEA200D2E818C2C00E4E2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A34739LVZN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mergisi.CRE-Flyer-MakerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CRE Flyer Maker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEA1FDA2E818C2B00E4E2AA /* Build configuration list for PBXProject "CRE Flyer Maker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEA20032E818C2C00E4E2AA /* Debug */,
+				1DEA20042E818C2C00E4E2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEA20052E818C2C00E4E2AA /* Build configuration list for PBXNativeTarget "CRE Flyer Maker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEA20062E818C2C00E4E2AA /* Debug */,
+				1DEA20072E818C2C00E4E2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEA20082E818C2C00E4E2AA /* Build configuration list for PBXNativeTarget "CRE Flyer MakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEA20092E818C2C00E4E2AA /* Debug */,
+				1DEA200A2E818C2C00E4E2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEA200B2E818C2C00E4E2AA /* Build configuration list for PBXNativeTarget "CRE Flyer MakerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEA200C2E818C2C00E4E2AA /* Debug */,
+				1DEA200D2E818C2C00E4E2AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1DEA1FD72E818C2B00E4E2AA /* Project object */;
+}
