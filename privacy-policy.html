@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - CRE Flyer Maker</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #007AFF;
+            --secondary-blue: #5AC8FA;
+            --dark-gray: #1C1C1E;
+            --medium-gray: #8E8E93;
+            --light-gray: #F2F2F7;
+            --white: #FFFFFF;
+            --success-green: #34C759;
+            --warning-orange: #FF9500;
+            --error-red: #FF3B30;
+            --gradient-start: #007AFF;
+            --gradient-end: #5AC8FA;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Content Section */
+        .content {
+            background: var(--white);
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .content-body {
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .section ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--white);
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: rgba(0, 122, 255, 0.1);
+            border: 1px solid rgba(0, 122, 255, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .info-box h4 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .toc h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .contact-info h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            color: var(--medium-gray);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .content-body {
+                padding: 2rem 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .toc {
+                padding: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            .content {
+                box-shadow: none;
+                margin: 0;
+            }
+
+            .highlight-box, .contact-info {
+                background: #f0f0f0 !important;
+                color: black !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="support.html" class="logo">
+                    <span class="logo-icon">🏢</span>
+                    <span>CRE Flyer Maker</span>
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#terms">Terms</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. This policy explains how CRE Flyer Maker collects, uses, and protects your personal information.</p>
+        </section>
+
+        <div class="last-updated">
+            <strong>Last Updated:</strong> September 25, 2025
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h3>📋 Table of Contents</h3>
+            <ul>
+                <li><a href="#overview">1. Overview</a></li>
+                <li><a href="#information-collection">2. Information We Collect</a></li>
+                <li><a href="#information-use">3. How We Use Your Information</a></li>
+                <li><a href="#information-sharing">4. Information Sharing</a></li>
+                <li><a href="#data-storage">5. Data Storage and Security</a></li>
+                <li><a href="#user-rights">6. Your Rights</a></li>
+                <li><a href="#children-privacy">7. Children's Privacy</a></li>
+                <li><a href="#international-transfers">8. International Data Transfers</a></li>
+                <li><a href="#policy-changes">9. Changes to This Policy</a></li>
+                <li><a href="#contact">10. Contact Information</a></li>
+            </ul>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <div class="content-body">
+                <!-- Overview -->
+                <section id="overview" class="section">
+                    <h2>1. Overview</h2>
+                    <p>CRE Flyer Maker ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and related services.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>🔒 Our Privacy Commitment</h3>
+                        <p>We believe in transparency and your right to privacy. We collect only the information necessary to provide you with the best possible experience using CRE Flyer Maker.</p>
+                    </div>
+
+                    <p>By using CRE Flyer Maker, you agree to the collection and use of information in accordance with this policy. If you do not agree with this policy, please do not use our application.</p>
+                </section>
+
+                <!-- Information Collection -->
+                <section id="information-collection" class="section">
+                    <h2>2. Information We Collect</h2>
+
+                    <h3>2.1 Information You Provide</h3>
+                    <p>When you use CRE Flyer Maker, you may provide us with certain information, including:</p>
+                    <ul>
+                        <li><strong>Property Information:</strong> Property details, descriptions, addresses, prices, and specifications you enter</li>
+                        <li><strong>Broker Information:</strong> Your name, company, phone number, and email address</li>
+                        <li><strong>Photos:</strong> Property images you capture or select from your device</li>
+                        <li><strong>Account Information:</strong> Information for app preferences and settings</li>
+                    </ul>
+
+                    <h3>2.2 Automatically Collected Information</h3>
+                    <p>We may automatically collect certain information when you use our app:</p>
+                    <ul>
+                        <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers</li>
+                        <li><strong>Usage Data:</strong> Features used, time spent in app, crash reports</li>
+                        <li><strong>Technical Data:</strong> IP address, app version, device settings</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <h4>📱 Local Storage</h4>
+                        <p>Most of your data (property information, photos, flyers) is stored locally on your device and is not transmitted to our servers unless you explicitly choose to share content.</p>
+                    </div>
+
+                    <h3>2.3 Camera and Photo Access</h3>
+                    <p>CRE Flyer Maker requires access to your device's camera and photo library to:</p>
+                    <ul>
+                        <li>Capture new property photos</li>
+                        <li>Select existing photos from your gallery</li>
+                        <li>Create and save flyer images</li>
+                    </ul>
+                    <p>You can control these permissions through your device settings at any time.</p>
+                </section>
+
+                <!-- Information Use -->
+                <section id="information-use" class="section">
+                    <h2>3. How We Use Your Information</h2>
+                    <p>We use the collected information for the following purposes:</p>
+
+                    <h3>3.1 Core App Functionality</h3>
+                    <ul>
+                        <li>Create and generate professional property flyers</li>
+                        <li>Store your property information and preferences</li>
+                        <li>Enable photo capture and editing features</li>
+                        <li>Generate QR codes for property sharing</li>
+                    </ul>
+
+                    <h3>3.2 App Improvement</h3>
+                    <ul>
+                        <li>Analyze app usage to improve features and performance</li>
+                        <li>Fix bugs and technical issues</li>
+                        <li>Develop new features based on user needs</li>
+                        <li>Ensure app security and prevent fraud</li>
+                    </ul>
+
+                    <h3>3.3 Customer Support</h3>
+                    <ul>
+                        <li>Respond to your questions and support requests</li>
+                        <li>Provide technical assistance</li>
+                        <li>Send important app updates and notifications</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <h4>🚫 What We DON'T Do</h4>
+                        <p>We do not sell, rent, or trade your personal information to third parties for marketing purposes. We do not use your property photos or information for any purpose other than providing our services to you.</p>
+                    </div>
+                </section>
+
+                <!-- Information Sharing -->
+                <section id="information-sharing" class="section">
+                    <h2>4. Information Sharing</h2>
+                    <p>We do not sell or rent your personal information to third parties. We may share your information only in the following limited circumstances:</p>
+
+                    <h3>4.1 With Your Consent</h3>
+                    <p>When you explicitly choose to share flyers or property information through the app's sharing features (email, social media, messaging apps), we facilitate that sharing according to your instructions.</p>
+
+                    <h3>4.2 Service Providers</h3>
+                    <p>We may share information with trusted third-party service providers who help us operate our app:</p>
+                    <ul>
+                        <li><strong>Analytics Services:</strong> To understand app usage and improve performance</li>
+                        <li><strong>Cloud Storage:</strong> For backup and synchronization features (if enabled)</li>
+                        <li><strong>Customer Support:</strong> To provide technical assistance</li>
+                    </ul>
+
+                    <h3>4.3 Legal Requirements</h3>
+                    <p>We may disclose your information if required by law, court order, or government request, or to:</p>
+                    <ul>
+                        <li>Comply with legal obligations</li>
+                        <li>Protect our rights and property</li>
+                        <li>Ensure user safety</li>
+                        <li>Investigate fraud or security issues</li>
+                    </ul>
+
+                    <h3>4.4 Business Transfers</h3>
+                    <p>In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you of any such change in ownership or control.</p>
+                </section>
+
+                <!-- Data Storage -->
+                <section id="data-storage" class="section">
+                    <h2>5. Data Storage and Security</h2>
+
+                    <h3>5.1 Local Storage</h3>
+                    <p>Most of your data is stored locally on your device, including:</p>
+                    <ul>
+                        <li>Property information and details</li>
+                        <li>Photos and flyer designs</li>
+                        <li>App preferences and settings</li>
+                        <li>Broker contact information</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h3>🔐 Security Measures</h3>
+                        <p>We implement appropriate technical and organizational measures to protect your information against unauthorized access, alteration, disclosure, or destruction.</p>
+                    </div>
+
+                    <h3>5.2 Data Retention</h3>
+                    <p>We retain your information for as long as necessary to provide our services and comply with legal obligations:</p>
+                    <ul>
+                        <li><strong>Local Data:</strong> Stored on your device until you delete the app or clear the data</li>
+                        <li><strong>Usage Analytics:</strong> Aggregated and anonymized data may be retained for up to 2 years</li>
+                        <li><strong>Support Records:</strong> Customer support communications retained for up to 3 years</li>
+                    </ul>
+
+                    <h3>5.3 Data Security</h3>
+                    <p>We use industry-standard security measures to protect your information:</p>
+                    <ul>
+                        <li>Encryption of data in transit and at rest</li>
+                        <li>Secure authentication and access controls</li>
+                        <li>Regular security audits and updates</li>
+                        <li>Limited access to personal information by employees</li>
+                    </ul>
+                </section>
+
+                <!-- User Rights -->
+                <section id="user-rights" class="section">
+                    <h2>6. Your Rights</h2>
+                    <p>You have several rights regarding your personal information:</p>
+
+                    <h3>6.1 Access and Control</h3>
+                    <ul>
+                        <li><strong>Access:</strong> You can view all your property information and settings within the app</li>
+                        <li><strong>Edit:</strong> You can modify or update your information at any time</li>
+                        <li><strong>Delete:</strong> You can delete individual properties or all data from the app</li>
+                        <li><strong>Export:</strong> You can export your flyers and property information</li>
+                    </ul>
+
+                    <h3>6.2 Privacy Controls</h3>
+                    <ul>
+                        <li><strong>Camera Access:</strong> Control camera and photo library permissions in device settings</li>
+                        <li><strong>Sharing:</strong> Choose what information to include when sharing flyers</li>
+                        <li><strong>Analytics:</strong> Opt out of usage analytics in app settings</li>
+                    </ul>
+
+                    <h3>6.3 Data Portability</h3>
+                    <p>You can export your property information and flyers in common formats (PDF, image files) for use with other applications or services.</p>
+
+                    <div class="info-box">
+                        <h4>🗑️ Deleting Your Data</h4>
+                        <p>To completely remove all your data, simply delete the CRE Flyer Maker app from your device. This will remove all locally stored information. For any data that may have been shared with our servers, contact us at privacy@creflyer.app.</p>
+                    </div>
+                </section>
+
+                <!-- Children's Privacy -->
+                <section id="children-privacy" class="section">
+                    <h2>7. Children's Privacy</h2>
+                    <p>CRE Flyer Maker is designed for professional use by real estate professionals and is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+                    
+                    <p>If we become aware that we have collected personal information from a child under 13 without parental consent, we will take steps to delete that information as quickly as possible.</p>
+                    
+                    <p>If you are a parent or guardian and believe your child has provided us with personal information, please contact us at privacy@creflyer.app.</p>
+                </section>
+
+                <!-- International Transfers -->
+                <section id="international-transfers" class="section">
+                    <h2>8. International Data Transfers</h2>
+                    <p>CRE Flyer Maker may be used by individuals in various countries. If you are located outside the United States, please note that:</p>
+                    
+                    <ul>
+                        <li>Most data is stored locally on your device</li>
+                        <li>Limited data may be processed on servers located in the United States</li>
+                        <li>We implement appropriate safeguards for international data transfers</li>
+                        <li>We comply with applicable data protection laws in your jurisdiction</li>
+                    </ul>
+
+                    <h3>8.1 European Users</h3>
+                    <p>If you are located in the European Economic Area (EEA), you have additional rights under the General Data Protection Regulation (GDPR), including:</p>
+                    <ul>
+                        <li>Right to access your personal data</li>
+                        <li>Right to rectification of inaccurate data</li>
+                        <li>Right to erasure ("right to be forgotten")</li>
+                        <li>Right to restrict processing</li>
+                        <li>Right to data portability</li>
+                        <li>Right to object to processing</li>
+                    </ul>
+                </section>
+
+                <!-- Policy Changes -->
+                <section id="policy-changes" class="section">
+                    <h2>9. Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors.</p>
+
+                    <h3>9.1 Notification of Changes</h3>
+                    <p>When we make changes to this policy:</p>
+                    <ul>
+                        <li>We will update the "Last Updated" date at the top of this policy</li>
+                        <li>For significant changes, we will provide notice through the app or via email</li>
+                        <li>We will post the updated policy on our website</li>
+                        <li>Continued use of the app after changes constitutes acceptance</li>
+                    </ul>
+
+                    <h3>9.2 Review Regularly</h3>
+                    <p>We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.</p>
+                </section>
+
+                <!-- Contact Information -->
+                <section id="contact" class="section">
+                    <h2>10. Contact Information</h2>
+                    <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+
+                    <div class="contact-info">
+                        <h3>📧 Privacy Contact</h3>
+                        <p><strong>Email:</strong> <a href="mailto:privacy@creflyer.app">privacy@creflyer.app</a></p>
+                        <p><strong>Subject Line:</strong> Please include "Privacy Policy" in your subject line</p>
+                        <p><strong>Response Time:</strong> We will respond to privacy inquiries within 48 hours</p>
+                    </div>
+
+                    <h3>10.1 Data Protection Officer</h3>
+                    <p>For European users, you can contact our Data Protection Officer at:</p>
+                    <p><strong>Email:</strong> <a href="mailto:dpo@creflyer.app">dpo@creflyer.app</a></p>
+
+                    <h3>10.2 Regulatory Authorities</h3>
+                    <p>You have the right to lodge a complaint with your local data protection authority if you believe we have not handled your personal information in accordance with applicable laws.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="support.html">Support</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#contact">Contact</a>
+                    <a href="https://apps.apple.com/app/cre-flyer-maker">App Store</a>
+                </div>
+                <p>&copy; 2025 CRE Flyer Maker. All rights reserved.</p>
+                <p>Your privacy is our priority 🔒</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Email click tracking
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Privacy email link clicked:', this.href);
+            });
+        });
+
+        // Print functionality
+        function printPolicy() {
+            window.print();
+        }
+
+        // Copy link functionality
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                showMessage('Privacy Policy URL copied to clipboard!');
+            });
+        }
+
+        function showMessage(text, type = 'success') {
+            const message = document.createElement('div');
+            message.className = `message ${type}`;
+            message.textContent = text;
+            message.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--success-green);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 1000;
+                font-weight: 500;
+            `;
+            
+            document.body.appendChild(message);
+            
+            setTimeout(() => {
+                message.remove();
+            }, 3000);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('CRE Flyer Maker Privacy Policy Loaded');
+            
+            // Check if user came from app
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('source') === 'app') {
+                showMessage('Welcome! Here\'s our complete privacy policy.');
+            }
+        });
+
+        // Add keyboard navigation for accessibility
+        document.addEventListener('keydown', function(e) {
+            // Add any keyboard shortcuts if needed
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                printPolicy();
+            }
+        });
+    </script>
+</body>
+</html>
