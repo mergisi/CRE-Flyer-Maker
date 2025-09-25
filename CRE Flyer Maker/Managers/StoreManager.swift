@@ -15,7 +15,7 @@ class StoreManager: ObservableObject {
     
     @Published var products: [Product] = []
     @Published var purchasedSubscriptions: [Product] = []
-    @Published var subscriptionGroupStatus: Product.SubscriptionInfo.RenewalInfo.RenewalState?
+    @Published var subscriptionGroupStatus: String?
     @Published var isLoading = false
     @Published var errorMessage: String?
     
@@ -138,14 +138,7 @@ class StoreManager: ObservableObject {
         self.purchasedSubscriptions = purchasedSubscriptions
         
         // Update subscription group status
-        for subscription in purchasedSubscriptions {
-            if let statuses = try? await subscription.subscription?.status,
-               let status = statuses.first {
-                let renewalInfo = try? checkVerified(status.renewalInfo)
-                subscriptionGroupStatus = renewalInfo?.renewalState
-                break
-            }
-        }
+        subscriptionGroupStatus = purchasedSubscriptions.isEmpty ? "inactive" : "active"
     }
     
     // MARK: - Subscription Info
