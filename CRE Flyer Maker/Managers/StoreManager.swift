@@ -15,7 +15,7 @@ class StoreManager: ObservableObject {
     
     @Published var products: [Product] = []
     @Published var purchasedSubscriptions: [Product] = []
-    @Published var subscriptionGroupStatus: Product.SubscriptionInfo.RenewalState?
+    @Published var subscriptionGroupStatus: Product.SubscriptionInfo.RenewalInfo.RenewalState?
     @Published var isLoading = false
     @Published var errorMessage: String?
     
