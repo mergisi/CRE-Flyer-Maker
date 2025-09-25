@@ -400,6 +400,9 @@
 				DEVELOPMENT_TEAM = A34739LVZN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "   CRE Flyer Maker needs camera access to take property photos for creating professional flyers.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "   CRE Flyer Maker needs access to your photo library to select property images for creating flyers.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "   CRE Flyer Maker needs permission to save generated flyers to your photo library.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +431,9 @@
 				DEVELOPMENT_TEAM = A34739LVZN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "   CRE Flyer Maker needs camera access to take property photos for creating professional flyers.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "   CRE Flyer Maker needs access to your photo library to select property images for creating flyers.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "   CRE Flyer Maker needs permission to save generated flyers to your photo library.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
