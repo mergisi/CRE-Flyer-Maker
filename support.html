@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRE Flyer Maker - Support & Help</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #007AFF;
+            --secondary-blue: #5AC8FA;
+            --dark-gray: #1C1C1E;
+            --medium-gray: #8E8E93;
+            --light-gray: #F2F2F7;
+            --white: #FFFFFF;
+            --success-green: #34C759;
+            --warning-orange: #FF9500;
+            --error-red: #FF3B30;
+            --gradient-start: #007AFF;
+            --gradient-end: #5AC8FA;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Content Section */
+        .content {
+            background: var(--white);
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .content-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .content-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-body {
+            padding: 3rem 2rem;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 2rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #e8e8ed;
+        }
+
+        .faq-question.active {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            display: none;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-answer.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .feature-description {
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-link {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-link:hover {
+            opacity: 1;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--light-gray);
+            color: var(--dark-gray);
+        }
+
+        .btn-secondary:hover {
+            background: #e8e8ed;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            color: var(--medium-gray);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success/Error Messages */
+        .message {
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        .message.success {
+            background: rgba(52, 199, 89, 0.1);
+            color: var(--success-green);
+            border: 1px solid rgba(52, 199, 89, 0.3);
+        }
+
+        .message.error {
+            background: rgba(255, 59, 48, 0.1);
+            color: var(--error-red);
+            border: 1px solid rgba(255, 59, 48, 0.3);
+        }
+
+        /* App Screenshots */
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .screenshot {
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🏢</span>
+                    <span>CRE Flyer Maker</span>
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>CRE Flyer Maker</h1>
+            <p>Create professional commercial real estate flyers in just 60 seconds. Turn property photos into stunning marketing materials with our AI-powered iOS app.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">60</span>
+                    <span class="stat-label">Seconds to Create</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Professional Quality</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Sharing Options</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="content">
+            <div class="content-header">
+                <h2>🚀 Key Features</h2>
+                <p>Everything you need to create professional real estate flyers</p>
+            </div>
+            <div class="content-body">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📷</div>
+                        <h3 class="feature-title">Quick Photo Capture</h3>
+                        <p class="feature-description">Take professional property photos directly within the app with built-in camera integration and editing tools.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3 class="feature-title">AI-Powered Design</h3>
+                        <p class="feature-description">Automatically generate stunning flyer layouts with intelligent placement of property details and images.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Property Details</h3>
+                        <p class="feature-description">Add comprehensive property information including price, size, type, and broker contact details.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3 class="feature-title">QR Code Integration</h3>
+                        <p class="feature-description">Generate smart QR codes for easy sharing and tracking of flyer engagement and views.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📤</div>
+                        <h3 class="feature-title">Instant Sharing</h3>
+                        <p class="feature-description">Share flyers via WhatsApp, email, social media, or export as PDF with one tap.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💼</div>
+                        <h3 class="feature-title">Professional Templates</h3>
+                        <p class="feature-description">Choose from multiple professionally designed templates optimized for commercial real estate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="content">
+            <div class="content-header">
+                <h2>❓ Frequently Asked Questions</h2>
+                <p>Get answers to common questions about CRE Flyer Maker</p>
+            </div>
+            <div class="content-body">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How do I create my first flyer?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Creating your first flyer is simple:</p>
+                        <ol>
+                            <li>Open the CRE Flyer Maker app</li>
+                            <li>Tap the "+" button to start a new flyer</li>
+                            <li>Take a photo of the property or select from your gallery</li>
+                            <li>Fill in the property details (title, price, size, type, etc.)</li>
+                            <li>Add broker information and contact details</li>
+                            <li>Preview and customize your flyer</li>
+                            <li>Share or export your professional flyer!</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What property types are supported?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>CRE Flyer Maker supports all major commercial property types:</p>
+                        <ul>
+                            <li><strong>Office</strong> - Office buildings, co-working spaces, medical offices</li>
+                            <li><strong>Retail</strong> - Shopping centers, standalone retail, restaurants</li>
+                            <li><strong>Industrial</strong> - Warehouses, manufacturing facilities, distribution centers</li>
+                            <li><strong>Land</strong> - Development sites, vacant land, investment opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I customize the flyer design?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! CRE Flyer Maker offers several customization options:</p>
+                        <ul>
+                            <li>Multiple professional template designs</li>
+                            <li>Custom color schemes and branding</li>
+                            <li>Flexible layout options</li>
+                            <li>Add your company logo and branding</li>
+                            <li>Customize text formatting and positioning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How do QR codes work?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>QR codes in CRE Flyer Maker provide smart sharing capabilities:</p>
+                        <ul>
+                            <li>Automatically generated for each flyer</li>
+                            <li>Direct link to property details and contact information</li>
+                            <li>Track engagement and views (Pro feature)</li>
+                            <li>Easy for prospects to scan and save contact info</li>
+                            <li>Works with any QR code scanner app</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What sharing options are available?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Share your flyers through multiple channels:</p>
+                        <ul>
+                            <li><strong>Social Media</strong> - Facebook, Instagram, LinkedIn, Twitter</li>
+                            <li><strong>Messaging</strong> - WhatsApp, iMessage, SMS</li>
+                            <li><strong>Email</strong> - Direct email with PDF attachment</li>
+                            <li><strong>Export</strong> - Save as PDF or high-resolution image</li>
+                            <li><strong>Print</strong> - AirPrint compatible for physical flyers</li>
+                            <li><strong>Cloud Storage</strong> - Save to iCloud, Dropbox, Google Drive</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is there a free version?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! CRE Flyer Maker offers a free tier with:</p>
+                        <ul>
+                            <li>Create up to 2 flyers for free</li>
+                            <li>Access to basic templates</li>
+                            <li>Standard sharing options</li>
+                            <li>Basic QR code generation</li>
+                        </ul>
+                        <p><strong>Pro features include:</strong></p>
+                        <ul>
+                            <li>Unlimited flyer creation</li>
+                            <li>Advanced templates and customization</li>
+                            <li>Engagement tracking and analytics</li>
+                            <li>Custom branding options</li>
+                            <li>Priority support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How do I upgrade to Pro?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Upgrading to Pro is easy:</p>
+                        <ol>
+                            <li>Open the CRE Flyer Maker app</li>
+                            <li>Go to Settings or tap "Upgrade to Pro" when prompted</li>
+                            <li>Choose your subscription plan (monthly or annual)</li>
+                            <li>Complete the purchase through the App Store</li>
+                            <li>Enjoy unlimited flyers and Pro features!</li>
+                        </ol>
+                        <p>Pro subscriptions are managed through your Apple ID and can be cancelled anytime in your App Store settings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="content">
+            <div class="content-header">
+                <h2>📞 Get in Touch</h2>
+                <p>Need help or have questions? We're here to assist you!</p>
+            </div>
+            <div class="content-body">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3 class="contact-title">Email Support</h3>
+                        <p>Get help with technical issues</p>
+                        <a href="mailto:support@creflyer.app" class="contact-link">support@creflyer.app</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">💬</div>
+                        <h3 class="contact-title">Feature Requests</h3>
+                        <p>Suggest new features or improvements</p>
+                        <a href="mailto:feedback@creflyer.app" class="contact-link">feedback@creflyer.app</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🐛</div>
+                        <h3 class="contact-title">Bug Reports</h3>
+                        <p>Report issues or bugs</p>
+                        <a href="mailto:bugs@creflyer.app" class="contact-link">bugs@creflyer.app</a>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <h3>Response Time</h3>
+                    <p style="color: var(--medium-gray); margin-top: 1rem;">We typically respond to all inquiries within 24 hours during business days. For urgent issues, please mark your email as "URGENT" in the subject line.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section id="support" class="content">
+            <div class="content-header">
+                <h2>🛠️ Technical Support</h2>
+                <p>Troubleshooting and technical assistance</p>
+            </div>
+            <div class="content-body">
+                <h3>Common Issues & Solutions</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>App crashes or won't open</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If the app is crashing or won't open, try these steps:</p>
+                        <ol>
+                            <li>Force close the app and reopen it</li>
+                            <li>Restart your iPhone/iPad</li>
+                            <li>Check if you have the latest version of the app</li>
+                            <li>Update to the latest iOS version</li>
+                            <li>If the issue persists, delete and reinstall the app</li>
+                        </ol>
+                        <p><strong>Note:</strong> Reinstalling will remove saved flyers, so make sure to export them first!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Photos not loading or appearing blurry</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For photo issues, try the following:</p>
+                        <ul>
+                            <li>Check camera permissions in Settings > Privacy & Security > Camera</li>
+                            <li>Ensure you have sufficient storage space on your device</li>
+                            <li>Clean your camera lens</li>
+                            <li>Try taking photos in good lighting conditions</li>
+                            <li>For existing photos, check if they're stored in iCloud and need to download</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Sharing or export not working</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If you can't share or export flyers:</p>
+                        <ul>
+                            <li>Check your internet connection</li>
+                            <li>Verify app permissions for the sharing method you're using</li>
+                            <li>Try a different sharing option (email, save to photos, etc.)</li>
+                            <li>Restart the app and try again</li>
+                            <li>Check available storage space on your device</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Subscription or billing issues</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For subscription-related issues:</p>
+                        <ul>
+                            <li>Check your subscription status in Settings > Apple ID > Subscriptions</li>
+                            <li>Ensure your payment method is up to date</li>
+                            <li>Try restoring purchases in the app settings</li>
+                            <li>Contact Apple Support for billing disputes</li>
+                            <li>Email us at support@creflyer.app for account-specific issues</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 3rem;">System Requirements</h3>
+                <div style="background: var(--light-gray); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">📱 <strong>iOS:</strong> Requires iOS 15.0 or later</li>
+                        <li style="margin-bottom: 1rem;">📲 <strong>Devices:</strong> Compatible with iPhone and iPad</li>
+                        <li style="margin-bottom: 1rem;">💾 <strong>Storage:</strong> At least 100MB free space recommended</li>
+                        <li style="margin-bottom: 1rem;">📶 <strong>Internet:</strong> Required for sharing and Pro features</li>
+                        <li>📷 <strong>Camera:</strong> Required for photo capture functionality</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <h3>Still Need Help?</h3>
+                    <p style="color: var(--medium-gray); margin: 1rem 0 2rem;">Can't find the answer you're looking for? Our support team is ready to help!</p>
+                    <a href="mailto:support@creflyer.app?subject=Support Request" class="btn btn-primary">Contact Support</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#contact">Contact</a>
+                    <a href="https://apps.apple.com/app/cre-flyer-maker">App Store</a>
+                </div>
+                <p>&copy; 2025 CRE Flyer Maker. All rights reserved.</p>
+                <p>Made with ❤️ for commercial real estate professionals</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-question').forEach(q => {
+                if (q !== element) {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                    q.querySelector('.faq-icon').textContent = '▼';
+                }
+            });
+            
+            // Toggle current FAQ
+            element.classList.toggle('active');
+            answer.classList.toggle('active');
+            icon.textContent = element.classList.contains('active') ? '▲' : '▼';
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Email click tracking (optional analytics)
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Email link clicked:', this.href);
+                // Add your analytics tracking here if needed
+            });
+        });
+
+        // Add loading animation to contact forms (if implemented)
+        function showLoading(button) {
+            const originalText = button.textContent;
+            button.innerHTML = '<span class="loading"></span> Sending...';
+            button.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 2000);
+        }
+
+        // Show success/error messages
+        function showMessage(text, type = 'success') {
+            const message = document.createElement('div');
+            message.className = `message ${type}`;
+            message.textContent = text;
+            
+            // Insert at the top of the page
+            document.body.insertBefore(message, document.body.firstChild);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                message.remove();
+            }, 5000);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('CRE Flyer Maker Support Page Loaded');
+            
+            // Add any initialization code here
+            // For example, check if user came from a specific link
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('source') === 'app') {
+                showMessage('Welcome from the CRE Flyer Maker app! How can we help you today?');
+            }
+        });
+
+        // Add keyboard navigation for accessibility
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                const focused = document.activeElement;
+                if (focused.classList.contains('faq-question')) {
+                    e.preventDefault();
+                    toggleFAQ(focused);
+                }
+            }
+        });
+
+        // Make FAQ items focusable for accessibility
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.setAttribute('tabindex', '0');
+            question.setAttribute('role', 'button');
+            question.setAttribute('aria-expanded', 'false');
+        });
+    </script>
+</body>
+</html>
