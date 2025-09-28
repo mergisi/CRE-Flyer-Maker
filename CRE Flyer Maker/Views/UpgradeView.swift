@@ -209,7 +209,7 @@ struct UpgradeView: View {
             // Terms of Use and Privacy Policy Links
             HStack(spacing: 20) {
                 Button("Terms of Use") {
-                    if let url = URL(string: "https://creflyer.app/terms-of-use.html") {
+                    if let url = URL(string: "https://mergisi.github.io/CRE-Flyer-Maker/terms-of-use.html") {
                         UIApplication.shared.open(url)
                     }
                 }
@@ -217,7 +217,7 @@ struct UpgradeView: View {
                 .foregroundColor(.white.opacity(0.7))
                 
                 Button("Privacy Policy") {
-                    if let url = URL(string: "https://creflyer.app/privacy-policy.html") {
+                    if let url = URL(string: "https://mergisi.github.io/CRE-Flyer-Maker/privacy-policy.html") {
                         UIApplication.shared.open(url)
                     }
                 }
