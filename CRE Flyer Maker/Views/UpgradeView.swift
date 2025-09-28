@@ -24,13 +24,19 @@ struct UpgradeView: View {
         ZStack {
             backgroundGradient
             
-            VStack(spacing: 0) {
-                closeButton
-                crownIcon
-                titleSection
-                featuresCard
-                Spacer()
-                subscribeButton
+            ScrollView {
+                VStack(spacing: 0) {
+                    closeButton
+                    crownIcon
+                    titleSection
+                    featuresCard
+                    
+                    // Add some spacing before the subscription section
+                    Spacer()
+                        .frame(height: 20)
+                    
+                    subscribeButton
+                }
             }
         }
         .onAppear {
@@ -206,21 +212,21 @@ struct UpgradeView: View {
             .disabled(storeManager.isLoading || selectedProduct == nil)
             
             // Subscription terms disclosure
-            VStack(spacing: 8) {
+            VStack(spacing: 6) {
                 Text("Free trial for 7 days, then auto-renews.")
-                    .font(.system(size: 11, weight: .medium))
+                    .font(.system(size: 10, weight: .medium))
                     .foregroundColor(.white.opacity(0.9))
                     .multilineTextAlignment(.center)
                 
                 if let product = selectedProduct {
                     Text("Cancel anytime. \(product.displayPrice) will be charged to your Apple ID account 24 hours before the trial ends. Subscription automatically renews unless cancelled at least 24 hours before the end of the current period.")
-                        .font(.system(size: 10))
+                        .font(.system(size: 9))
                         .foregroundColor(.white.opacity(0.8))
                         .multilineTextAlignment(.center)
-                        .lineSpacing(2)
+                        .lineSpacing(1)
                 }
             }
-            .padding(.horizontal, 10)
+            .padding(.horizontal, 15)
             
             Button("Restore Purchases") {
                 Task {
@@ -251,7 +257,7 @@ struct UpgradeView: View {
             .padding(.top, 8)
         }
         .padding(.horizontal, 20)
-        .padding(.bottom, 30)
+        .padding(.bottom, 20)
     }
     
     private func purchaseSelectedProduct() async {
