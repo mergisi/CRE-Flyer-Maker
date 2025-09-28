@@ -52,10 +52,10 @@ class ShareManager {
         }
     }
     
-    // MARK: - Share to WhatsApp
-    func shareToWhatsApp(property: Property, completion: @escaping (Bool, String?) -> Void) {
+    // MARK: - Share via Messages
+    func shareViaMessages(property: Property, pdfData: Data?, completion: @escaping (Bool, String?) -> Void) {
         let message = """
-        🏢 *\(property.title)*
+        🏢 \(property.title)
         
         📍 \(property.address)
         💰 \(property.formattedPrice)
@@ -70,19 +70,19 @@ class ShareManager {
         View more: \(QRCodeGenerator.shared.generateTrackingURL(for: property.id))
         """
         
-        // Check if WhatsApp is installed
-        guard let whatsappURL = URL(string: "whatsapp://send?text=\(message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"),
-              UIApplication.shared.canOpenURL(whatsappURL) else {
+        // Use iOS native Messages app
+        guard let messagesURL = URL(string: "sms:&body=\(message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"),
+              UIApplication.shared.canOpenURL(messagesURL) else {
             // Fallback to regular share
             presentShareSheet(items: [message], completion: completion)
             return
         }
         
-        UIApplication.shared.open(whatsappURL) { success in
+        UIApplication.shared.open(messagesURL) { success in
             if success {
-                completion(true, "Shared to WhatsApp")
+                completion(true, "Messages opened")
             } else {
-                completion(false, "Failed to open WhatsApp")
+                completion(false, "Failed to open Messages")
             }
         }
     }
@@ -215,9 +215,6 @@ class ShareManager {
         case .print:
             return "Sent to printer"
         default:
-            if activityType.rawValue.contains("WhatsApp") {
-                return "Shared to WhatsApp"
-            }
             return "Shared successfully"
         }
     }

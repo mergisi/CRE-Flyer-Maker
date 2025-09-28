@@ -54,7 +54,7 @@ struct OnboardingView: View {
                     OnboardingPage(
                         emoji: "🚀",
                         title: "Share Instantly",
-                        subtitle: "Send flyers via WhatsApp, email, or any platform with one tap",
+                        subtitle: "Export as PDF, save to Photos, or share with iOS's built-in sharing options",
                         isLastPage: true,
                         buttonAction: {
                             completeOnboarding()

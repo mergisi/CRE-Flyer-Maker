@@ -64,15 +64,15 @@ struct ShareOptionsView: View {
                             shareQRCode()
                         }
                         
-                        // WhatsApp
+                        // Messages
                         ShareOptionButton(
                             icon: "message.fill",
-                            title: "Share via WhatsApp",
-                            subtitle: "Send property details on WhatsApp",
+                            title: "Share via Messages",
+                            subtitle: "Send property details via iMessage",
                             color: .green,
                             isProcessing: isProcessing
                         ) {
-                            shareViaWhatsApp()
+                            shareViaMessages()
                         }
                         
                         // Email
@@ -171,16 +171,16 @@ struct ShareOptionsView: View {
         }
     }
     
-    private func shareViaWhatsApp() {
+    private func shareViaMessages() {
         isProcessing = true
         
-        shareManager.shareToWhatsApp(property: property) { success, message in
+        shareManager.shareViaMessages(property: property, pdfData: pdfData) { success, message in
             DispatchQueue.main.async {
                 self.isProcessing = false
                 if success {
-                    self.toast = Toast(message: message ?? "Shared to WhatsApp", type: .success)
+                    self.toast = Toast(message: message ?? "Messages opened", type: .success)
                 } else {
-                    self.toast = Toast(message: message ?? "Failed to share", type: .error)
+                    self.toast = Toast(message: message ?? "Failed to open Messages", type: .error)
                 }
             }
         }
