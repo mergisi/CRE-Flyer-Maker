@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - CRE Flyer Maker</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #007AFF;
+            --secondary-blue: #5AC8FA;
+            --dark-gray: #1C1C1E;
+            --medium-gray: #8E8E93;
+            --light-gray: #F2F2F7;
+            --white: #FFFFFF;
+            --success-green: #34C759;
+            --warning-orange: #FF9500;
+            --error-red: #FF3B30;
+            --gradient-start: #007AFF;
+            --gradient-end: #5AC8FA;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Content Section */
+        .content {
+            background: var(--white);
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .content-body {
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .section ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--white);
+            margin-top: 0;
+        }
+
+        .info-box {
+            background: rgba(0, 122, 255, 0.1);
+            border: 1px solid rgba(0, 122, 255, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .info-box h4 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .toc h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .contact-info h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            color: var(--medium-gray);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .content-body {
+                padding: 2rem 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .toc {
+                padding: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            header, footer {
+                display: none;
+            }
+
+            .content {
+                box-shadow: none;
+                margin: 0;
+            }
+
+            .highlight-box, .contact-info {
+                background: #f0f0f0 !important;
+                color: black !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="support.html" class="logo">
+                    <span class="logo-icon">🏢</span>
+                    <span>CRE Flyer Maker</span>
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="privacy-policy.html">Privacy</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Terms of Use</h1>
+            <p>End User License Agreement (EULA) for CRE Flyer Maker. Please read these terms carefully before using our application.</p>
+        </section>
+
+        <div class="last-updated">
+            <strong>Last Updated:</strong> September 28, 2025
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h3>📋 Table of Contents</h3>
+            <ul>
+                <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+                <li><a href="#license">2. License Grant</a></li>
+                <li><a href="#subscription">3. Subscription Terms</a></li>
+                <li><a href="#user-content">4. User Content and Data</a></li>
+                <li><a href="#prohibited-uses">5. Prohibited Uses</a></li>
+                <li><a href="#intellectual-property">6. Intellectual Property</a></li>
+                <li><a href="#privacy">7. Privacy and Data Protection</a></li>
+                <li><a href="#disclaimers">8. Disclaimers and Warranties</a></li>
+                <li><a href="#limitation-liability">9. Limitation of Liability</a></li>
+                <li><a href="#termination">10. Termination</a></li>
+                <li><a href="#governing-law">11. Governing Law</a></li>
+                <li><a href="#changes">12. Changes to Terms</a></li>
+                <li><a href="#contact">13. Contact Information</a></li>
+            </ul>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <div class="content-body">
+                <!-- Acceptance of Terms -->
+                <section id="acceptance" class="section">
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By downloading, installing, or using CRE Flyer Maker ("the App"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>📱 Important Notice</h3>
+                        <p>These Terms constitute a legally binding agreement between you and CRE Flyer Maker. Your use of the App indicates your acceptance of these Terms and our Privacy Policy.</p>
+                    </div>
+
+                    <p>These Terms apply to all users of the App, including both free and paid subscribers. Additional terms may apply to specific features or services within the App.</p>
+                </section>
+
+                <!-- License Grant -->
+                <section id="license" class="section">
+                    <h2>2. License Grant</h2>
+
+                    <h3>2.1 Limited License</h3>
+                    <p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to:</p>
+                    <ul>
+                        <li>Download and install the App on your iOS devices</li>
+                        <li>Use the App for your personal or business purposes</li>
+                        <li>Create, edit, and share property flyers using the App</li>
+                        <li>Access and use the features available in your subscription tier</li>
+                    </ul>
+
+                    <h3>2.2 License Restrictions</h3>
+                    <p>You may NOT:</p>
+                    <ul>
+                        <li>Copy, modify, or create derivative works of the App</li>
+                        <li>Reverse engineer, decompile, or disassemble the App</li>
+                        <li>Remove or alter any proprietary notices or labels</li>
+                        <li>Use the App for any unlawful purpose</li>
+                        <li>Share your account credentials with others</li>
+                        <li>Use the App to compete with our services</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <h4>🔒 Single User License</h4>
+                        <p>Each license is granted to a single user. If you need multiple licenses for your organization, please contact us about enterprise options.</p>
+                    </div>
+                </section>
+
+                <!-- Subscription Terms -->
+                <section id="subscription" class="section">
+                    <h2>3. Subscription Terms</h2>
+
+                    <h3>3.1 Subscription Plans</h3>
+                    <p>CRE Flyer Maker offers the following subscription options:</p>
+                    <ul>
+                        <li><strong>Free Tier:</strong> Limited features with up to 2 flyers</li>
+                        <li><strong>Pro Monthly:</strong> Full access to all features, billed monthly</li>
+                        <li><strong>Pro Annual:</strong> Full access to all features, billed annually with savings</li>
+                    </ul>
+
+                    <h3>3.2 Auto-Renewal</h3>
+                    <p>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. Your Apple ID account will be charged for renewal within 24 hours prior to the end of the current period.</p>
+
+                    <h3>3.3 Free Trial</h3>
+                    <p>New users may be eligible for a free trial period. If you don't cancel before the trial ends, you will be charged for the subscription. Trial eligibility is determined by Apple and may be limited to one per user.</p>
+
+                    <h3>3.4 Cancellation</h3>
+                    <p>You can cancel your subscription at any time through your Apple ID account settings. Cancellation takes effect at the end of the current billing period. No refunds are provided for partial periods.</p>
+
+                    <div class="highlight-box">
+                        <h3>💳 Billing and Payments</h3>
+                        <p>All payments are processed through Apple's App Store. Prices may vary by region and are subject to applicable taxes. We do not have access to your payment information.</p>
+                    </div>
+
+                    <h3>3.5 Price Changes</h3>
+                    <p>We reserve the right to change subscription prices. Price changes will not affect existing subscriptions until renewal. You will be notified of price changes in advance.</p>
+                </section>
+
+                <!-- User Content and Data -->
+                <section id="user-content" class="section">
+                    <h2>4. User Content and Data</h2>
+
+                    <h3>4.1 Your Content</h3>
+                    <p>You retain ownership of all content you create using the App, including:</p>
+                    <ul>
+                        <li>Property information and descriptions</li>
+                        <li>Photos and images you upload</li>
+                        <li>Flyers and marketing materials you create</li>
+                        <li>Contact information and branding elements</li>
+                    </ul>
+
+                    <h3>4.2 License to Use Your Content</h3>
+                    <p>By using the App, you grant us a limited license to:</p>
+                    <ul>
+                        <li>Store and process your content to provide the service</li>
+                        <li>Display your content within the App interface</li>
+                        <li>Generate flyers and export files containing your content</li>
+                        <li>Backup your content for service reliability</li>
+                    </ul>
+
+                    <h3>4.3 Content Responsibility</h3>
+                    <p>You are solely responsible for the content you create and share. You represent and warrant that:</p>
+                    <ul>
+                        <li>You own or have the right to use all content you upload</li>
+                        <li>Your content does not violate any laws or third-party rights</li>
+                        <li>Your content is accurate and not misleading</li>
+                        <li>You have permission to use any photos of properties</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <h4>📸 Photo Rights</h4>
+                        <p>Ensure you have proper authorization before photographing and marketing properties. Respect privacy laws and property rights.</p>
+                    </div>
+
+                    <h3>4.4 Data Storage</h3>
+                    <p>Your content is primarily stored locally on your device. Some data may be stored on our servers for backup and synchronization purposes. We implement appropriate security measures to protect your data.</p>
+                </section>
+
+                <!-- Prohibited Uses -->
+                <section id="prohibited-uses" class="section">
+                    <h2>5. Prohibited Uses</h2>
+
+                    <h3>5.1 Unacceptable Conduct</h3>
+                    <p>You agree not to use the App for any of the following prohibited activities:</p>
+                    <ul>
+                        <li>Creating false, misleading, or fraudulent property listings</li>
+                        <li>Violating any local, state, national, or international laws</li>
+                        <li>Infringing on intellectual property rights of others</li>
+                        <li>Harassing, threatening, or discriminating against others</li>
+                        <li>Attempting to gain unauthorized access to our systems</li>
+                        <li>Distributing malware, viruses, or harmful code</li>
+                        <li>Spamming or sending unsolicited communications</li>
+                        <li>Using the App to compete with our services</li>
+                    </ul>
+
+                    <h3>5.2 Real Estate Compliance</h3>
+                    <p>When using the App for real estate purposes, you must:</p>
+                    <ul>
+                        <li>Comply with all applicable real estate laws and regulations</li>
+                        <li>Include required disclosures and disclaimers</li>
+                        <li>Respect fair housing laws and anti-discrimination policies</li>
+                        <li>Obtain proper licensing and authorization as required</li>
+                        <li>Ensure accuracy of property information and pricing</li>
+                    </ul>
+
+                    <h3>5.3 Enforcement</h3>
+                    <p>We reserve the right to investigate and take appropriate action against users who violate these Terms, including suspension or termination of accounts.</p>
+                </section>
+
+                <!-- Intellectual Property -->
+                <section id="intellectual-property" class="section">
+                    <h2>6. Intellectual Property</h2>
+
+                    <h3>6.1 Our Intellectual Property</h3>
+                    <p>The App and all related technology, including but not limited to:</p>
+                    <ul>
+                        <li>Software code and algorithms</li>
+                        <li>User interface and design elements</li>
+                        <li>Templates and layout designs</li>
+                        <li>Trademarks, logos, and branding</li>
+                        <li>Documentation and help materials</li>
+                    </ul>
+                    <p>are owned by us and protected by intellectual property laws. You may not use our intellectual property without explicit permission.</p>
+
+                    <h3>6.2 Third-Party Content</h3>
+                    <p>The App may include third-party content, libraries, or services. Such content is owned by the respective third parties and subject to their terms and licenses.</p>
+
+                    <h3>6.3 Feedback and Suggestions</h3>
+                    <p>If you provide feedback, suggestions, or ideas about the App, you grant us the right to use such feedback without compensation or attribution.</p>
+
+                    <div class="info-box">
+                        <h4>🎨 Template Usage</h4>
+                        <p>Our flyer templates are provided for your use in creating marketing materials. You may not redistribute or resell the templates themselves.</p>
+                    </div>
+                </section>
+
+                <!-- Privacy -->
+                <section id="privacy" class="section">
+                    <h2>7. Privacy and Data Protection</h2>
+
+                    <h3>7.1 Privacy Policy</h3>
+                    <p>Your privacy is important to us. Our collection, use, and protection of your personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference.</p>
+
+                    <h3>7.2 Data Processing</h3>
+                    <p>By using the App, you consent to our processing of your data as described in our Privacy Policy. This includes:</p>
+                    <ul>
+                        <li>Storing your content and preferences</li>
+                        <li>Analyzing usage patterns to improve the App</li>
+                        <li>Providing customer support</li>
+                        <li>Sending important service communications</li>
+                    </ul>
+
+                    <h3>7.3 Data Security</h3>
+                    <p>We implement appropriate technical and organizational measures to protect your data. However, no system is completely secure, and you use the App at your own risk.</p>
+
+                    <h3>7.4 International Transfers</h3>
+                    <p>Your data may be processed and stored in countries other than your own. We ensure appropriate safeguards are in place for international data transfers.</p>
+                </section>
+
+                <!-- Disclaimers -->
+                <section id="disclaimers" class="section">
+                    <h2>8. Disclaimers and Warranties</h2>
+
+                    <h3>8.1 "As Is" Basis</h3>
+                    <p>The App is provided on an "as is" and "as available" basis. We make no warranties, express or implied, regarding:</p>
+                    <ul>
+                        <li>The App's functionality, reliability, or availability</li>
+                        <li>The accuracy or completeness of content</li>
+                        <li>The App's fitness for any particular purpose</li>
+                        <li>The absence of errors, bugs, or interruptions</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h3>⚠️ Important Disclaimer</h3>
+                        <p>We do not warrant that the App will meet your requirements or that its operation will be uninterrupted or error-free. Use of the App is at your own risk.</p>
+                    </div>
+
+                    <h3>8.2 Third-Party Services</h3>
+                    <p>The App may integrate with third-party services (such as cloud storage or sharing platforms). We are not responsible for the availability, functionality, or content of such third-party services.</p>
+
+                    <h3>8.3 Real Estate Disclaimers</h3>
+                    <p>The App is a tool for creating marketing materials. We do not:</p>
+                    <ul>
+                        <li>Provide real estate advice or services</li>
+                        <li>Verify the accuracy of property information</li>
+                        <li>Guarantee compliance with real estate regulations</li>
+                        <li>Assume responsibility for your business practices</li>
+                    </ul>
+                </section>
+
+                <!-- Limitation of Liability -->
+                <section id="limitation-liability" class="section">
+                    <h2>9. Limitation of Liability</h2>
+
+                    <h3>9.1 Exclusion of Damages</h3>
+                    <p>To the maximum extent permitted by law, we shall not be liable for any:</p>
+                    <ul>
+                        <li>Indirect, incidental, or consequential damages</li>
+                        <li>Loss of profits, revenue, or business opportunities</li>
+                        <li>Loss of data or content</li>
+                        <li>Damages resulting from third-party actions</li>
+                        <li>Damages exceeding the amount you paid for the App</li>
+                    </ul>
+
+                    <h3>9.2 Maximum Liability</h3>
+                    <p>Our total liability to you for all claims arising from your use of the App shall not exceed the amount you paid for your subscription in the 12 months preceding the claim.</p>
+
+                    <h3>9.3 Indemnification</h3>
+                    <p>You agree to indemnify and hold us harmless from any claims, damages, or expenses arising from:</p>
+                    <ul>
+                        <li>Your use of the App</li>
+                        <li>Your violation of these Terms</li>
+                        <li>Your content or business practices</li>
+                        <li>Your violation of any third-party rights</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <h4>⚖️ Legal Limitations</h4>
+                        <p>Some jurisdictions do not allow the exclusion of certain warranties or limitation of liability. In such cases, our liability is limited to the maximum extent permitted by law.</p>
+                    </div>
+                </section>
+
+                <!-- Termination -->
+                <section id="termination" class="section">
+                    <h2>10. Termination</h2>
+
+                    <h3>10.1 Termination by You</h3>
+                    <p>You may terminate your use of the App at any time by:</p>
+                    <ul>
+                        <li>Cancelling your subscription through your Apple ID settings</li>
+                        <li>Deleting the App from your devices</li>
+                        <li>Ceasing to use our services</li>
+                    </ul>
+
+                    <h3>10.2 Termination by Us</h3>
+                    <p>We may terminate or suspend your access to the App immediately, without prior notice, if you:</p>
+                    <ul>
+                        <li>Violate these Terms</li>
+                        <li>Engage in prohibited activities</li>
+                        <li>Fail to pay subscription fees</li>
+                        <li>Use the App in a way that harms our services or other users</li>
+                    </ul>
+
+                    <h3>10.3 Effect of Termination</h3>
+                    <p>Upon termination:</p>
+                    <ul>
+                        <li>Your license to use the App ends immediately</li>
+                        <li>You must cease all use of the App</li>
+                        <li>We may delete your account and data</li>
+                        <li>Provisions that should survive termination will remain in effect</li>
+                    </ul>
+
+                    <h3>10.4 Data Retention</h3>
+                    <p>After termination, we may retain your data for a reasonable period to comply with legal obligations or resolve disputes. You can request data deletion by contacting us.</p>
+                </section>
+
+                <!-- Governing Law -->
+                <section id="governing-law" class="section">
+                    <h2>11. Governing Law</h2>
+
+                    <h3>11.1 Applicable Law</h3>
+                    <p>These Terms are governed by and construed in accordance with the laws of the United States and the State of California, without regard to conflict of law principles.</p>
+
+                    <h3>11.2 Dispute Resolution</h3>
+                    <p>Any disputes arising from these Terms or your use of the App shall be resolved through:</p>
+                    <ul>
+                        <li>Good faith negotiation between the parties</li>
+                        <li>Binding arbitration if negotiation fails</li>
+                        <li>Courts of competent jurisdiction in California for injunctive relief</li>
+                    </ul>
+
+                    <h3>11.3 Class Action Waiver</h3>
+                    <p>You agree that any dispute resolution proceedings will be conducted only on an individual basis and not in a class, consolidated, or representative action.</p>
+
+                    <h3>11.4 International Users</h3>
+                    <p>If you are using the App from outside the United States, you acknowledge that you are responsible for compliance with local laws in your jurisdiction.</p>
+                </section>
+
+                <!-- Changes to Terms -->
+                <section id="changes" class="section">
+                    <h2>12. Changes to Terms</h2>
+
+                    <h3>12.1 Right to Modify</h3>
+                    <p>We reserve the right to modify these Terms at any time. Changes may be made to:</p>
+                    <ul>
+                        <li>Reflect changes in our services or features</li>
+                        <li>Comply with legal requirements</li>
+                        <li>Address security or technical issues</li>
+                        <li>Improve user experience</li>
+                    </ul>
+
+                    <h3>12.2 Notice of Changes</h3>
+                    <p>We will notify you of material changes by:</p>
+                    <ul>
+                        <li>Updating the "Last Updated" date on this page</li>
+                        <li>Sending notifications through the App</li>
+                        <li>Posting notices on our website</li>
+                        <li>Emailing registered users for significant changes</li>
+                    </ul>
+
+                    <h3>12.3 Acceptance of Changes</h3>
+                    <p>Your continued use of the App after changes are posted constitutes acceptance of the new Terms. If you do not agree to the changes, you must stop using the App.</p>
+
+                    <div class="info-box">
+                        <h4>📅 Regular Review</h4>
+                        <p>We recommend reviewing these Terms periodically to stay informed of any updates or changes that may affect your use of the App.</p>
+                    </div>
+                </section>
+
+                <!-- Contact Information -->
+                <section id="contact" class="section">
+                    <h2>13. Contact Information</h2>
+                    <p>If you have questions about these Terms or need to contact us regarding legal matters, please reach out:</p>
+
+                    <div class="contact-info">
+                        <h3>📧 Legal Contact</h3>
+                        <p><strong>Email:</strong> <a href="mailto:legal@creflyer.app">legal@creflyer.app</a></p>
+                        <p><strong>Subject Line:</strong> Please include "Terms of Use" in your subject line</p>
+                        <p><strong>Response Time:</strong> We will respond to legal inquiries within 5 business days</p>
+                    </div>
+
+                    <h3>13.1 General Support</h3>
+                    <p>For technical support or general questions about the App, please contact:</p>
+                    <p><strong>Email:</strong> <a href="mailto:support@creflyer.app">support@creflyer.app</a></p>
+
+                    <h3>13.2 Business Address</h3>
+                    <p>CRE Flyer Maker<br>
+                    [Business Address]<br>
+                    United States</p>
+
+                    <h3>13.3 Effective Date</h3>
+                    <p>These Terms of Use are effective as of September 28, 2025, and will remain in effect until modified or terminated in accordance with these Terms.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="support.html">Support</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="#contact">Contact</a>
+                    <a href="https://apps.apple.com/app/cre-flyer-maker">App Store</a>
+                </div>
+                <p>&copy; 2025 CRE Flyer Maker. All rights reserved.</p>
+                <p>Professional real estate marketing made simple ⚖️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Email click tracking
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Legal email link clicked:', this.href);
+            });
+        });
+
+        // Print functionality
+        function printTerms() {
+            window.print();
+        }
+
+        // Copy link functionality
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                showMessage('Terms of Use URL copied to clipboard!');
+            });
+        }
+
+        function showMessage(text, type = 'success') {
+            const message = document.createElement('div');
+            message.className = `message ${type}`;
+            message.textContent = text;
+            message.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--success-green);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 1000;
+                font-weight: 500;
+            `;
+            
+            document.body.appendChild(message);
+            
+            setTimeout(() => {
+                message.remove();
+            }, 3000);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('CRE Flyer Maker Terms of Use Loaded');
+            
+            // Check if user came from app
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('source') === 'app') {
+                showMessage('Welcome! Please review our Terms of Use.');
+            }
+        });
+
+        // Add keyboard navigation for accessibility
+        document.addEventListener('keydown', function(e) {
+            // Add any keyboard shortcuts if needed
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                printTerms();
+            }
+        });
+    </script>
+</body>
+</html>

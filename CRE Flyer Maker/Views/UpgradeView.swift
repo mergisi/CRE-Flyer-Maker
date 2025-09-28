@@ -205,6 +205,26 @@ struct UpgradeView: View {
             }
             .font(.system(size: 14, weight: .medium))
             .foregroundColor(.white.opacity(0.8))
+            
+            // Terms of Use and Privacy Policy Links
+            HStack(spacing: 20) {
+                Button("Terms of Use") {
+                    if let url = URL(string: "https://creflyer.app/terms-of-use.html") {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                .font(.system(size: 12, weight: .medium))
+                .foregroundColor(.white.opacity(0.7))
+                
+                Button("Privacy Policy") {
+                    if let url = URL(string: "https://creflyer.app/privacy-policy.html") {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                .font(.system(size: 12, weight: .medium))
+                .foregroundColor(.white.opacity(0.7))
+            }
+            .padding(.top, 8)
         }
         .padding(.horizontal, 20)
         .padding(.bottom, 30)
