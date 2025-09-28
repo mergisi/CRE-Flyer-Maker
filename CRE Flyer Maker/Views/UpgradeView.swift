@@ -175,20 +175,27 @@ struct UpgradeView: View {
     
     private var subscribeButton: some View {
         VStack(spacing: 12) {
+            // Main subscription button
             Button(action: {
                 Task {
                     await purchaseSelectedProduct()
                 }
             }) {
-                HStack {
+                VStack(spacing: 4) {
                     if storeManager.isLoading {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint: AppColors.primaryBlue))
                             .scaleEffect(0.8)
                     } else {
-                        Text("Start Free Trial")
+                        Text("Start 7-Day Free Trial")
                             .font(.system(size: 18, weight: .semibold))
                             .foregroundColor(AppColors.primaryBlue)
+                        
+                        if let product = selectedProduct {
+                            Text("Then \(product.displayPrice) \(product.isYearly ? "per year" : "per month")")
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(AppColors.primaryBlue.opacity(0.8))
+                        }
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -197,6 +204,23 @@ struct UpgradeView: View {
                 .cornerRadius(14)
             }
             .disabled(storeManager.isLoading || selectedProduct == nil)
+            
+            // Subscription terms disclosure
+            VStack(spacing: 8) {
+                Text("Free trial for 7 days, then auto-renews.")
+                    .font(.system(size: 11, weight: .medium))
+                    .foregroundColor(.white.opacity(0.9))
+                    .multilineTextAlignment(.center)
+                
+                if let product = selectedProduct {
+                    Text("Cancel anytime. \(product.displayPrice) will be charged to your Apple ID account 24 hours before the trial ends. Subscription automatically renews unless cancelled at least 24 hours before the end of the current period.")
+                        .font(.system(size: 10))
+                        .foregroundColor(.white.opacity(0.8))
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(2)
+                }
+            }
+            .padding(.horizontal, 10)
             
             Button("Restore Purchases") {
                 Task {
